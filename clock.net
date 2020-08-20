@@ -1,0 +1,33 @@
+* SPICE3 file created from clock.ext - technology: scmos
+
+.option scale=0.01u
+
+M1000 a_n3_n15# vin vdd w_n25_3# pmos w=81 l=27
++  ad=6561 pd=324 as=5.93519e+06 ps=37098
+M1001 a_46_n29# a_n3_n15# vdd w_26_3# pmos w=234 l=27
++  ad=37908 pd=792 as=0 ps=0
+M1002 vout a_46_n29# vdd w_90_4# pmos w=1836 l=27
++  ad=1.13658e+07 pd=35082 as=0 ps=0
+M1003 vout a_314_n801# vdd w_263_5# pmos w=14571 l=27
++  ad=0 pd=0 as=0 ps=0
+M1004 a_n3_n15# vin Gnd Gnd nmos w=36 l=27
++  ad=3564 pd=270 as=2.1397e+06 ps=17784
+M1005 a_46_n29# a_n3_n15# Gnd Gnd nmos w=108 l=27
++  ad=18468 pd=558 as=0 ps=0
+M1006 vout a_46_n29# Gnd Gnd nmos w=792 l=27
++  ad=5.06606e+06 pd=16452 as=0 ps=0
+M1007 vout a_314_n801# Gnd Gnd nmos w=6192 l=27
++  ad=0 pd=0 as=0 ps=0
+C0 Gnd Gnd 3.33fF
+C1 vout Gnd 2.36fF
+C2 vdd Gnd 3.77fF
+C3 w_263_5# Gnd 121.15fF
+C4 w_90_4# Gnd 13.57fF
+vin  N006 0 PULSE(2.5 0 0 0.1 0.1 0.5 1 10)
+vdd N004 0 1.8
+.model NMOS NMOS
+.model PMOS PMOS
+.print vin
+.print vout
+.tran 1
+.end
